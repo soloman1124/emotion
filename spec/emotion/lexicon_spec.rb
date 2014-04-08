@@ -17,5 +17,25 @@ module Emotion
         Lexicon.find('checklist').should be_an(Lexicon)
       end
     end
+
+    describe "#word" do
+      let :lexicon do
+        Lexicon.find 'checklist'
+      end
+
+      it "returns the matched word" do
+        lexicon.word.should == 'checklist'
+      end
+    end
+
+    describe "#categories" do
+      let :lexicon do
+        Lexicon.find 'checklist'
+      end
+
+      it "returns the matched word" do
+        lexicon.categories.should == Set.new(['trust', 'positive'])
+      end
+    end
   end
 end

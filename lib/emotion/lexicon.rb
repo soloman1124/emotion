@@ -1,8 +1,10 @@
 module Emotion
   class Lexicon
+    attr_reader :word, :categories
+
     def initialize word, categories
       @word = word
-      @categories = categories
+      @categories = Set.new categories
     end
 
     def self.find word
